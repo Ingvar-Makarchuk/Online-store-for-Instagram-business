@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="menu.css"> -->
+ <link href="http://allfont.ru/allfont.css?fonts=decor" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<header class="navigation">
+    <div class="container">
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Create</a></li>
+
+            <div class="menu_right">
+            <li class="menu_social"><a href="#">Inst</a></li>
+            <li class="menu_social"><a href="#">Tele</a></li>
+            </div>
+        </ul>
+
+       
+    </div>
+</header>
+
+<section class="header">
+    <div class="container">
+        <h1 class="header_title">
+            Индивидуальная 
+            <span class="">карта звёздного неба</span>
+        </h1>
+        <p class="paragraph header_paragraph">
+            Над нами есть целый мир, где каждый миг - уникален ✨⠀<br>
+            Один из способов навсегда оставить в памяти <span class="bold">лучший момент из жизни</span> -
+                <br> запечатлеть его на <span class="bold">Звёздной Карте!</span>
+        </p>
+        <button class="btn btn_buy btn_neon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Заказать</button>
+        <button class="btn btn_details">Узнать больше</button>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2 class="title">Что такое звёздная карта?</h2>
+        <p class="paragraph about_paragraph">
+        </p>
+    </div>
+</section>
+<section class="build">
+    <div class="container">
+        <div class="build_lay df">
+            <div class="build_result">
+                <img src="assets/img/test1.png" alt="">
+            </div>
+            <div class="build_constructor">
+                <div class="step step1">
+                    Выберите материал:
+                    <ul class="const_materials">
+                            <input type="radio" name="material_input" id="mat_on_border" attr_type='material' hidden>
+                       <label for="mat_on_border">В рамке</label>
+                            <input type="radio" name="material_input" id="mat_on_canvas" attr_type='material' hidden>
+                       <label for="mat_on_canvas">На холсте</label>
+                            <input type="radio" name="material_input" id="mat_on_pdf" attr_type='material' hidden>
+                       <label for="mat_on_pdf">Электронный формат</label>
+                            <input type="radio" name="material_input" id="mat_on_paper" attr_type='material' hidden>
+                       <label for="mat_on_paper">На фотобумаге</label>
+                    </ul>
+                    Выберите дизайн:
+                    <ul class="const_designs">
+                        <input name="design" type="radio" id="d_black_compass" attr_type='design'>
+                    <label for="d_black_compass" class="const_designs_card">
+                        <img src="assets/img/test1.png" alt="">
+                    </label>
+                        <input name="design" type="radio" id="d_white_compass" attr_type='design'>
+                    <label for="d_white_compass"  class="const_designs_card">
+                        <img src="assets/img/test2.png" alt="">
+                    </label>
+                        <input name="design" type="radio" id="d_white_classic" attr_type='design'>
+                    <label for="d_white_classic" class="const_designs_card">
+                        <img src="assets/img/test1.png" alt="">
+                    </label>
+                    </ul>
+                    Выберите размер:
+                    <ul class="const_sizes">
+                            <input name="radio_size" type="radio" id="size30x40" value="30x40"  attr_type='size'>
+                        <label for="size30x40" value="30x40">30x40</label>
+                            <input name="radio_size" type="radio" id="size40x50" value="40x50"  attr_type='size'>
+                        <label for="size40x50" value="40x50">40x50</label>
+                            <input name="radio_size" type="radio" id="size50x70" value="50x70"  attr_type='size'>
+                        <label for="size50x70" value="50x70">50x70</label>
+                    </ul>
+                </div>
+                <div class="step step2 dn">
+                    Введите дату:
+                    <input type="text" placeholder="Data">
+                    Введите место:
+                    <input type="text" placeholder="City">
+                    Введите Время:
+                    <input type="text" placeholder="Time">
+                </div>
+
+                <div class="step step3 dn">
+                    Введите фразу (сверху):
+                    <input type="text" id="user_text" value="It's my text for my girl">
+                    Введите текст (снизу):
+                    <input type="text" id="user_text_bottom" value="It's my text for my girl">
+                </div>
+                
+                <button class="btn btn_next">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script> -->
+<script src="/assets/js/app.js"></script>
+
+</body>
+</html>

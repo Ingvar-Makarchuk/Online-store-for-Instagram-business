@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>StarsHoneyMap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
+	<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+	<header class="navigation df">	
+		<div class="container">
+			<div class="menu ">
+				<div class="menu-bg"></div>
+				<div class="menu-burger">☰</div>
+			</div>
+			<ul class="menu-dell menu-items df">
+				<li class="logo"><img src="/assets/img/logo3.png" alt="Логотип"></li>
+				<li><a class="scrl-m"href="#_information">Главная</a></li>
+				<li><a class="scrl-m" href="#_about">О карте</a></li>
+				<li><a class="scrl-m" href="#_shipping-active" id="shipping_btn">Доставка</a></li>
+				<li><a class="scrl-m" href="#_designs">Дизайны	</a></li>
+				<li><a class="scrl-m" href="#_answers">Вопросы</a></li>
+				<li class="menu-contact">
+					<div class="shipping">Бесплатная доставка по Украине</div>
+					<div class="df">
+						<p>Для связи</p>
+						<div class="menu-contact-icons">
+							<a class='instagram' href="https://www.instagram.com/starshoneymap/?hl=ru"></a>
+							<a class='telegram' href="https://t.me/ingvar_makarchuk"></a>
+							<a class='viber' href="viber://add?number=+0734080939"></a>
+						</div>
+					</div>
+				</li>
+				
+	
+			</ul>
+			
+		</div>
+	</header>
+
+	<div class="card">
+		<div class="container">
+			<form class="card-form">
+				<div class="card-preview layout-designs-block">
+					<div class=" designs-block wow fadeInLeft card-preview-block" data-wow-delay="0s">
+						<div class="designs-block-frame">
+							<img src="/assets/img/compass-b.png" alt="Предпросмотр" class="card-preview-img">
+						</div>
+					</div>
+				</div>
+				<div class="card-settings">
+					<p class="step-count"><span id="this">1</span>/<span id="all">4</span></p>
+
+					<div class="card-settings-material">
+						<h3 class="settings-type">Material</h3>
+						<p>
+							<input type="radio" name="material" id="m1" >
+							<label for="m1">label1</label>
+						</p>
+						<p>
+							<input type="radio" name="material" id="m2" >
+							<label for="m2">label2</label>
+						</p>
+						<p>
+							<input type="radio" name="material" id="m3">
+							<label for="m3">label3</label>
+						</p>
+					</div>
+					<div class="settings-type">
+						<h3 class="settings-title">Size</h3>
+						<p>
+							<input type="radio" name="size" id="s1" >
+							<label for="s1">label1</label>
+						</p>
+						<p>
+							<input type="radio" name="size" id="s2" >
+							<label for="s2">label2</label>
+						</p>
+						<p>
+							<input type="radio" name="size" id="s3" >
+							<label for="s3">label3</label>
+						</p>
+					</div>
+					<input type="submit" class="card-settings-btn btn btn-step" value="Следующий шаг"></input>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
