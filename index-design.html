@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>StarsHoneyMap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
+	<link rel="stylesheet" href="assets/css/app.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	
+<div class="main-cart">
+	<a href="cart.html" class="main-cart-bg">
+		<span id="main-cart-count"></span>
+	</a>
+</div>
+<header class="navigation df">	
+	<div class="container">
+		<div class="menu ">
+			<div class="menu-bg"></div>
+			<div class="menu-burger">☰</div>
+		</div>
+		<ul class="menu-dell menu-items df">
+			<li class="logo"><a href="#"><img src="assets/img/logo3.png" alt="Логотип"></a></li>
+			<li><a class="scrl"href="index.html">Главная</a></li>
+			<li><a class="scrl-m" href="#_about">О карте</a></li>
+			<li><a class="scrl-m" href="#_shipping-active" id="shipping_btn">Доставка</a></li>
+			<li><a class="scrl-m" href="#_designs">Дизайны	</a></li>
+			<li><a class="scrl-m" href="#_answers">Вопросы</a></li>
+	<div class="points"></div>
+
+			<li class="menu-contact">
+				<div class="shipping">Бесплатная доставка по Украине</div>
+				<div class="df">
+					<p>Для связи</p>
+					<div class="menu-contact-icons">
+						<a class='instagram' href="https://www.instagram.com/starshoneymap/?hl=ru"></a>
+						<a class='telegram' href="https://t.me/ingvar_makarchuk"></a>
+						<a class='viber' href="viber://add?number=+0734080939"></a>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<div class="card">
+<div class="container">
+	<form class="card-form">
+		<div class="card-preview layout-designs-block">
+			<div id="card-preview-block-30x40" class="designs-block card-preview-block" data-wow-delay="0s">
+				<div class="designs-block-frame">
+					<!-- <img src="assets/img/compass-b.png" alt="Предпросмотр" class="card-preview-img"> -->
+				</div>
+			</div>
+			<div id="card-preview-block-40x50" class="dn designs-block card-preview-block" data-wow-delay="0s">
+				<div class="designs-block-frame">
+					<!-- <img src="assets/img/compass-b.png" alt="Предпросмотр" class="card-preview-img"> -->
+				</div>
+			</div>
+			<div id="card-preview-block-50x70" class="dn designs-block card-preview-block" data-wow-delay="0s">
+				<div class="designs-block-frame">
+					<!-- <img src="assets/img/compass-b.png" alt="Предпросмотр" class="card-preview-img"> -->
+				</div>
+			</div>
+		</div>
+		<div class="card-settings">
+			<div class="card-settings-texts">
+				<h2 class="card-title-step card-title-step1 title-active">Момент</h2>
+				<h2 class="card-title-step card-title-step2">Текст</h2>
+				<h2 class="card-title-step card-title-step3">Размер</h2>
+			</div>
+			<div class="errors"></div>
+
+			<div class="card-step card-step1">
+				<div class="card-settings-section">
+					<div class="card-settings-type settings-type-data">
+					<div class="df"><h3 class="settings-title">Где произошло ваше событие?</h3><span class="location-info">?</span></div>
+					<input id="place" type="text" value="Киев, Украина" class="location">
+					<div class="details">
+						<div class="df"><h3 class="settings-title">Укажите дату и время вашего события</h3><span class="location-info">?</span></div>
+							<div class="df">
+								<input id="year" type="text" placeholder="Выберите дату" value="2020">
+								<select id="month" value="">
+									<option value="Январь" >Январь</option>
+									<option value="Февраль" >Февраль</option>
+									<option value="Март" >Март</option>
+								</select>
+								<input id="day" type="text" placeholder="Выберите день" value="31">
+								<div class="time">
+									<input id="hour" type="text" value="21" >
+										<b>:</b>
+									<input id="minute" type="text" value="31" min="0" max="59" >
+								</div>
+							</div>		
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="card-step card-step2 card-settings-section dn">
+				<div class="card-settings-type card-settings-text">
+					<h3 class="settings-title">Ваше послание или фраза</h3>
+					<input type="text" id="user_text_top" value="Мы встретились под этими звездами">
+					<h3 class="settings-title">Комментарий</h3>
+					<p class="check-default-text"><input type="checkbox" class="check-default"checked>Использовать по умолчанию</p>
+					<input readonly type="text" id="user_text_botttom" value="Текст по умолчанию" class="default_text_bottom">
+				</div>
+			</div>
+
+
+			<div class="card-step card-step3 dn">
+				<div class="card-settings-checked card-settings-sizes">
+					<h3 class="settings-title">Размер вашей карты</h3>
+					<p>
+						<input type="radio" name="size" data-size="30x40"  id="s1" checked>
+						<label for="s1">30x40</label>
+					</p>
+					<p>
+						<input type="radio" name="size" data-size="40x50" id="s2" >
+						<label for="s2">40x50</label>
+					</p>
+					<p>
+						<input type="radio" name="size" data-size="50x70" id="s3" >
+						<label for="s3">50x70</label>
+					</p>
+				</div>
+
+				<div class="card-settings-checked card-settings-material">
+					<h3 class="settings-type">Материал</h3>
+					
+					<p><input type="radio" name="material" id="m1" data-mat="Карта в рамке со стеклом" data-m="data-f" checked>
+						<label for="m1">Карта в рамке со стеклом</label>
+					</p><p><input type="radio" name="material" id="m2" data-mat="Карта на холсте + натяжка" data-m="data-c">
+						<label for="m2">Карта на холсте + натяжка</label></p>
+					<p><input type="radio" name="material" id="m3" data-mat="Постер на фотобумаге" data-m="data-p">
+						<label for="m3">Постер на фотобумаге</label>
+					<p><input type="radio" name="material" id="m4" data-mat="Электронный формат (pdf)" data-m="data-e">
+						<label for="m4">Электронный формат (pdf)</label></p>
+				</div>
+			</div>
+			<div>Стоимость: <span id="price-for-good">950</span> грн</div>
+			<button class="card-settings-btn-prev btn dn" id="btn-step-prev">Назад</button>
+			<div id="btn-checked">
+				<button class="card-settings-btn btn btn-gradient" id="btn-step-next" >Следующий шаг</button>
+				<button type="submit" class="card-settings-btn btn btn-gradient dn" id="btn-add-to-cart" title="Добавить в корзину и посмотреть стоимость">Добавить в Корзину</button>
+			</div>
+		</div>
+	</form>
+
+
+
+	
+
+</div>
+</div>
+	<!-- <script src="assets/js/app.js"></script> -->
+	<script src="assets/js/design.js"></script>
+	<script src="assets/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+	<script>
+		wow = new WOW(
+		  {
+		  boxClass:     'wow',      // default
+		  animateClass: 'animated', // default
+		  offset:       60,          // default
+		  mobile:       true,       // default
+		  live:         true        // default
+		}
+		)
+		wow.init();
+  </script>
+</body>
+</html>
+
+
+
