@@ -1,38 +1,38 @@
-"use strict";
-let titleMove       = document.getElementById('title-move')
-let documentHeight  = document.documentElement.scrollHeight;
-let documentWidth   = document.documentElement.clientWidth;
-
-// Menu for mobile 
-let menu      = document.querySelector('.menu-burger')
-let menuItems = document.querySelector('.menu-items')
-let menuBg    = document.querySelector('.menu-bg')
-
- function test(e){
-    e.preventDefault;
-    menu.classList.toggle("fs")
-    menuBg.classList.toggle("fs")
-    menuItems.classList.toggle("fs")
-    menu.textContent == "☰" ? menu.textContent = "✕" : menu.textContent = "☰";
-    document.querySelector('body').classList.toggle('overflow-h')
-    document.querySelector('html').classList.toggle('overflow-h')
-menuItems.onclick = test;
-
-}
-menu.onclick = test;
-
-
-// Transition scroll
-const anchors = document.querySelectorAll('a.scrl-m')
+const menu      = document.querySelector('.menu-burger')
+const menuItems = document.querySelector('.menu-items')
+const menuBg    = document.querySelector('.menu-bg')
+const anchors =   document.querySelectorAll('a.scrl-m')
 
 for (let anchor of anchors) {
+  
   anchor.addEventListener('click', function(e) {
-    e.preventDefault()
-    const blockID = anchor.getAttribute('href')
+    e.preventDefault();
+    
+    if(!anchor.classList.contains('stop_toggleMenu')){
+      toggleMenu();
+    }
+    const blockID = anchor.getAttribute('href');
     document.querySelector(blockID).scrollIntoView({
       behavior: 'smooth',
       block: 'start'
     })
+    document.querySelector('body').classList.remove('overflow-h');
+    document.querySelector('html').classList.remove('overflow-h');
   })
 }
+
+// Menu for mobile 
+
+ function toggleMenu(){
+    // e.preventDefault;
+    menu.classList.toggle("fs");
+    menuBg.classList.toggle("fs");
+    menuItems.classList.toggle("fs");
+    menu.textContent == "☰" ? menu.textContent = "✕" : menu.textContent = "☰";
+    menu.classList.contains('fs') ? document.querySelector('body').classList.add('overflow-h') : document.querySelector('body').classList.remove('overflow-h');
+}
+menu.addEventListener('click', toggleMenu);
+
+
+
 

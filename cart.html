@@ -10,141 +10,108 @@
 	<link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-<div class="main-cart dn">
-    <a href="cart.html" class="main-cart-bg">
-        <span id="main-cart-count"></span>
-    </a>
+<div class="dn">
+    <div class="main-cart dn">
+        <a href="cart.html" class="main-cart-bg">
+            <span id="main-cart-count"></span>
+        </a>
+    </div>
 </div>
 <header class="navigation df">	
     <div class="container">
-        <div class="menu ">
+        <div class="menu">
             <div class="menu-bg"></div>
             <div class="menu-burger">☰</div>
         </div>
         <ul class="menu-dell menu-items df">
-            <li class="logo"><a href="#"><img src="assets/img/logo3.png" alt="Логотип"></a></li>
-            <li><a class="scrl-m"href="#_information">Главная</a></li>
-            <li><a class="scrl-m" href="#_about">О карте</a></li>
-            <li><a class="scrl-m" href="#_shipping-active" id="shipping_btn">Доставка</a></li>
-            <li><a class="scrl-m" href="#_designs">Дизайны	</a></li>
-            <li><a class="scrl-m" href="#_answers">Вопросы</a></li>
-            <li class="menu-contact">
-                <div class="shipping">Бесплатная доставка по Украине</div>
-                <div class="df">
-                    <p>Для связи</p>
-                    <div class="menu-contact-icons">
-                        <a class='instagram' href="https://www.instagram.com/starshoneymap/?hl=ru"></a>
-                        <a class='telegram' href="https://t.me/ingvar_makarchuk"></a>
-                        <a class='viber' href="viber://add?number=+0734080939"></a>
-                    </div>
-                </div>
-            </li>
+            <li class="logo"><a href="index.html"><img src="assets/img/logo1.png" alt="Логотип"></a></li>
+            <li><a href="index.html">Главная</a></li>
         </ul>
     </div>
 </header>
 <main class="cart">
     <div class="cart-panel">
-        <button id="del-all-cart">Удалить все</button>
+        <h2 class="cart-status">В корзине совсем пусто</h2>
+        <a href="index.html" class="cart-exit card-settings-btn btn btn-gradient">Вернуться на главную</a>
+      
     </div>
     <div class="container">
-        <h2 class="cart-status">В корзине совсем пусто</h2>
+        <div id="cart-order-check" class="dn"></div>
         <div class="df">
-        <div id="cart-render" class="cart-goods"></div>
+        <div class="cart-render-lay" style="position: relative;">
+            <button id="del-all-cart" class="dn">Удалить все</button>
 
+            <div id="cart-render" class="cart-goods"></div>
+        </div>
 
-        <form id="form" class="form">
-            <h2 class="form-title">Доставка</h2>
+        <form id="form" class="form dn">
+            <h3 class="form-title">Контактные данные</h3>
             <div class="form-control">
-                <label for="cart-username">Имя и Фамилия получателя</label>
-                <input type="text" placeholder="Виктория Анатольевна" id="cart-username" />
+                <label for="cart-username">Имя и Фамилия</label>
+                <input type="text" id="cart-username" />
                 <small></small>
             </div>
-            
             <div class="form-control">
-                <label for="cart-adress">Адресс доставки</label>
-                <input type="text" placeholder="г. Лугини, Киевская обл" id="cart-adress"/>
+                <label for="cart-phone">Мобильный телефон</label>
+                <input type="text" id="cart-phone"/>
+                <small>Ваш номер телефона</small>
+            </div>
+            <h3 class="form-title">Доставка</h3>
+            <div class="form-control">
+                <label for="cart-username-delivery"  title="Фамилия Имя и Отчество получателя">Ф.И.О получателя</label>
+                <input type="text" id="cart-username-delivery" />
+                <small></small>
+            </div>
+            <div class="form-control">
+                <label for="cart-phone-delivery">Телефон получателя</label>
+                <input type="text" id="cart-phone-delivery"/>
+                <small>Номер телефона получателя</small>
+            </div>
+            <div class="form-control">
+                <label for="cart-adress">Город</label>
+                <input type="text" id="cart-adress"/>
                 <small></small>
             </div>
             <div class="form-control">
                 <label for="cart-post">Отделение Новой Почты</label>
-                <input type="text" placeholder="Отделение номер 21" id="cart-post"/>
+                <input type="text" id="cart-post"/>
                 <small></small>
             </div>
-            <div class="form-control">
-                <label for="cart-email">Email</label>
-                <input type="email" placeholder="starshoneymap@gmail.com" id="cart-email" />
-                <small></small>
-            </div>
-            <div class="form-control">
-                <label for="cart-phone">Ваш номер телефона</label>
-                <input type="text" placeholder="380978766813" id="cart-phone"/>
-                <small>Введите номер телефона</small>
-            </div>
-            <div class="form-control">
+            
+            
+            <div class="form-control dn">
                 <label for="cart-comment">Комментарий</label>
                 <input type="text" placeholder="Не перезванивайте мне до 10 утра)" id="cart-comment"/>
             </div>
-            <div class="phone-check">
-                <p>Как с вами связатся?</p>
-                <div>
-                    <input type="radio" name="phone-radio" id="phone-call"/>
-                    <label for="phone-call">Позвонить</label>
-                </div>
-                <div>
-                    <input type="radio" name="phone-radio" id="phone-tg"/>
-                    <label for="phone-tg">Telegram</label>
-                </div>
-                <div>
-                    <input type="radio" name="phone-radio" id="phone-vb"/>
-                    <label for="phone-vb">Viber</label>
-                </div>
-                <div>
-                    <input type="radio" name="phone-radio" id="phone-wa"/>
-                    <label for="phone-wa">WhatsApp</label>
-                </div>
-            </div>
-            <div class="cart-summ">Итого: <span id="cart-calc">2800</span>грн</div>
-            <button>Submit</button>
+           
+            <div class="cart-summ">Итого: <span id="cart-calc"></span> грн</div>
+            <button id="send-order" class="btn btn-gradient">Оформить заказ</button>
+            <p class="order-note">Примечание: <b>На данном этапе вы не оплачиваете заказ</b>. Мы перезвоним или напишем вам чтобы уточнить детали и в течении 24 часов отправим вам макет карты для согласования. Только после вашего утверждения мы отправим вам ссылку на оплату через LiqPay или Приват24</p>
         </form>
-        </div>
     </div>
+</div>
 </main>
-<footer class="footer">
-    <div class="container">
-        <div class="footer-logo"></div>
-            <div class="footer-menu">
-                <div class="footer-menu-require">
-                    <!-- <p>Киев 2020</p> -->
-                    <p></p>
-                    <div class="pay-methods">
-                        <div class="mastercard"></div>
-                        <div class="visa"></div>
-                    </div>
-                </div>
-                <ul class="menu-dell">
-                    <li><a class="scrl-m" href="#_information">Главная</a></li>
-                    <li><a class="scrl-m" href="#_about">О карте</a></li>
-                    <li><a class="scrl-m" href="#_shipping-active">Доставка и Оплата</a></li>
-                    <li><a class="scrl-m" href="#_designs">Дизайны	</a></li>
-                    
-                </ul>
-                <div class="menu-contact-icons">
-                    <a class='instagram' href="https://www.instagram.com/starshoneymap/?hl=ru"></a>
-                    <a class='telegram' href="https://t.me/ingvar_makarchuk"></a>
-                    <a class='viber' href="viber://add?number=+0734080939"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<footer class="footer" id="_footer">
+	<div class="container">
+		<ul class="contact menu-dell">
+			<li><a href="https://www.instagram.com/starshoneymap/" title="viber"><img src="assets/img/viber.svg" alt="viber"></a></li>
+			<li><a href="viber://chat?number=%2B0734080939" title="instagram"><img src="assets/img/instagram.svg" alt="instagram"></a></li>
+			<li><a href="https://t.me/ingvar_makarchuk" title="telegram"><img src="assets/img/telegram.svg" alt="telegram"></a></li>
+			<li><span>ingvar@starshoneymap.com</span></li>
+		</ul>
+	</div>
+	<div class="pay-methods">
+		<div class="container">
+			<img src="assets/img/mastercard.svg" alt="mastercard" class="mscard">
+			<img src="assets/img/visa.png" alt="visa" class="vscard">
+			<img src="assets/img/logo_PrivatBank.png" alt="privatbank" class="prvcard">
+		</div>
+	</div>
 </footer>
-    
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> -->
-    
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/cart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-
-    
-                  
-    </body>
+</body>
 </html>

@@ -1,33 +1,28 @@
 // Get attributes from local storage for render design
-let thisDesignSrc = localStorage.getItem('thisDesignSrc');
-let thisDesignName = localStorage.getItem('thisDesignName');
 
-document.querySelectorAll('.designs-block-frame').forEach(item => {
-  item.innerHTML = `<img src="assets/img/${thisDesignSrc}.png" attr-src="${thisDesignSrc}" attr-design="${thisDesignName}" alt="Предпросмотр" class="card-preview-img">`
-});
+  let thisDesignSrc = localStorage.getItem('thisDesignSrc');
+  let thisDesignName = localStorage.getItem('thisDesignName');
+  document.querySelectorAll('.designs-block-frame').forEach(item => {item.innerHTML = `<img src="assets/img/${thisDesignSrc}.png" data-src="${thisDesignSrc}" data-design="${thisDesignName}" alt="Предпросмотр" class="card-preview-img">`});
+  document.getElementById('card-design-name').innerText = thisDesignName;
+
 
 function showGoodsCount(){
   if(localStorage.getItem('arrayCart') !== null){
   let arrayCart = JSON.parse(localStorage.getItem('arrayCart'));
   let goodsCounter = arrayCart.length;
-
-    document.getElementById('main-cart-count').innerText = goodsCounter;
-    document.querySelector('.main-cart').classList.remove('dn');
+    if(goodsCounter > 0){
+      document.getElementById('main-cart-count').innerText = goodsCounter;
+      document.querySelector('.main-cart').classList.remove('dn');
+    }
   }
   }
-  showGoodsCount();
-
-
+showGoodsCount();
 
 // Add to HTML price attributes for calculating cost
 function renderAttrPrice(){
   var size = document.querySelectorAll('.card-settings-sizes input')
   let y = -1;
   let price=[
-//       paper, frame, canvas
-// 30х40
-// 40х50
-// 50х70
     [600, 950, 800],
     [650, 1100, 950],
     [700, 1400, 1100]
@@ -43,13 +38,13 @@ function renderAttrPrice(){
 }
 renderAttrPrice();
 
-
 let getPriceAttr = ''
 checkedPrice = document.querySelectorAll('.card-settings-checked input');
 checkedPrice.forEach(item => {
   item.addEventListener('click', calcPrice)
   
 });
+
 // Calculation of cost depending on the chosen size and materials
 function calcPrice(){
   checkedSize = document.querySelector('.card-settings-sizes input:checked')
@@ -58,24 +53,6 @@ function calcPrice(){
   
   document.getElementById('price-for-good').innerText = getPriceAttr;
 }
-
-
-// Tabs for checked designs size
-let settingsSizes = document.querySelectorAll('.card-settings-sizes input');
-let cardPreviews  = document.querySelectorAll('.card-form .card-preview-block')
-
-settingsSizes.forEach(item => {
-  item.onclick = function(){
-      let attrSize = this.getAttribute('data-size')
-      cardPreviews.forEach(card => {
-          card.classList.add('dn')
-          card.classList.remove('card-transition')
-      });
-    item.classList.remove('test')
-      document.querySelector(`#card-preview-block-${attrSize}`).classList.remove('dn');
-      document.querySelector(`#card-preview-block-${attrSize}`).classList.add('card-transition');
-  }
-});
 
 // Checked in order slide next, prev, add to cart
 let cardCount = 0;
@@ -95,13 +72,12 @@ e.preventDefault();
     stepTitle[cardCount].classList.add('title-active')
 
   }
-  // Проверка на какой странице мы находимся
+  // Check page
   if(cardCount === stepType.length -1 ){
     document.getElementById('btn-step-next').classList.add('dn');
     document.getElementById('btn-add-to-cart').classList.remove('dn');
   }
 }
-
 
 function prevItem(e){
   e.preventDefault();
@@ -119,6 +95,8 @@ function prevItem(e){
   if(cardCount !== stepType.length -1 ){
     document.getElementById('btn-step-next').classList.remove('dn')
     document.getElementById('btn-add-to-cart').classList.add('dn')
+    document.getElementById('btn-go-to-cart').classList.add('dn');
+
   }
 }
 
@@ -146,22 +124,12 @@ function numValidateDay(){
   }
 }
 
-
-// Check count of product
-// let goodsCounter = localStorage.getItem('');
-// if (localStorage.getItem("goodsCounter") === null) {
-//   goodsCounter = 0;
-// }
-
-
 let arrayCart = [];
-
 
 // Validate user inputs
 function validate(e){
 
     e.preventDefault();
-
 
     let place         = document.getElementById('place');
     let year          = document.getElementById('year');
@@ -169,7 +137,6 @@ function validate(e){
     let day           = document.getElementById('day');
     let hour          = document.getElementById('hour');
     let minute        = document.getElementById('minute');
-  
     let textTop       = document.getElementById('user_text_top');
     let textBotttom   = document.getElementById('user_text_botttom');
 
@@ -185,8 +152,6 @@ function validate(e){
    
     let count = 0;
   
-  
-
     function stepOne(val,node){
       if(val === '') {
         errorValidate(node);
@@ -211,13 +176,6 @@ function validate(e){
          const userSize = size.getAttribute('data-size');
          const userMaterial = material.getAttribute('data-mat');
 
-
-
-        //  const item = document.querySelector('.card-preview-img');
-        //  thisDesignSrc = item.getAttribute('attr-src');
-        //  thisDesignName = item.getAttribute('attr-design');
-
-
         if(localStorage.getItem('arrayCart') !== null){
           
           arrayCart = JSON.parse(localStorage.getItem('arrayCart'));
@@ -225,7 +183,7 @@ function validate(e){
         }
         renderAttrPrice();
         calcPrice();
-        console.log(getPriceAttr)
+        showGoodsCount();
 
          let arrayCartObj = {
           userLocation: userPlace,
@@ -244,10 +202,8 @@ function validate(e){
           
         }
         arrayCart.push(arrayCartObj);
-
         localStorage.setItem('arrayCart', JSON.stringify(arrayCart));
         arrayCart = JSON.parse(localStorage.getItem('arrayCart'));
-
         
         let goodsCounter = arrayCart.length;
         localStorage.setItem('goodsCounter', goodsCounter);
@@ -257,7 +213,11 @@ function validate(e){
           localStorage.setItem('goodsCounter', goodsCounter);
 
         }
-        document.getElementById('main-cart-count').innerText = goodsCounter
+        showGoodsCount();
+        console.log(this)
+        document.getElementById('btn-add-to-cart').classList.add('dn');
+        document.getElementById('btn-go-to-cart').classList.remove('dn');
+
         }
       }
       
@@ -273,7 +233,6 @@ function validate(e){
   
   document.getElementById('user_text_botttom').classList.add('default_text_bottom')
 
-   
 }
 function errorValidate(input) {
   let errors = document.querySelector('.errors');
