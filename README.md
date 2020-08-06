@@ -1,1 +1,1 @@
-Link to preview: https://dellyn.github.io/starshoneymap.github.io/
+Link to preview: https://dellyn.github.io/starshoneymap.dev/
